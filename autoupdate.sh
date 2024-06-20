@@ -10,8 +10,6 @@ GIT=`which git`
 
 cd ${REPO}
 
-export GIT_SSL_NO_VERIFY=1
-
 "Current directory: $PWD" >> ${LOG} 2>&1
 if git diff-index --quiet HEAD --; then
     'No changes found. Skip pushing.' >> ${LOG} 2>&1
