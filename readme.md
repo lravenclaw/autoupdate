@@ -2,7 +2,7 @@
 
 1) Ensure the script that you want to run at shutdown is executable:
 ```
-chmod +x ~/scripts/pre-shutdown.sh
+chmod +x autoupdate.sh
 ```
 2) Move file `pre-shutdown.service` to `etc/systemd/system`
 3) Change exact directory in this `.service` file

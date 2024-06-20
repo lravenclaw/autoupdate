@@ -10,11 +10,13 @@ GIT=`which git`
 
 cd ${REPO}
 
+export GIT_SSL_NO_VERIFY=1
+
 "Current directory: $PWD" >> ${LOG} 2>&1
 if git diff-index --quiet HEAD --; then
-    echo '\nNo changes found. Skip pushing.\n'
+    'No changes found. Skip pushing.' >> ${LOG} 2>&1
 else
-    echo 'Changes found. Pushing changes...\n'
+    'Changes found. Pushing changes...\n' >> ${LOG} 2>&1
     ${GIT} config --local user.name "bash-script"
     ${GIT} config --local user.email "no-email@temp.com"
     ${GIT} add --all && git commit -m 'update' >> ${LOG} 2>&1
